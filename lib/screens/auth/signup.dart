@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oraimo/widgets/arrow_icon.dart';
 import 'package:oraimo/widgets/google_button.dart';
 import 'package:oraimo/screens/auth/verify.dart';
 
@@ -34,21 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           padding: const EdgeInsets.only(left: 10, top: 10),
           child: AppBar(
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.of(context).pop(),
-              padding: const EdgeInsets.all(8),
-              style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all(const Color(0xFF23251F)),
-                shape: MaterialStateProperty.all(
-                  const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(6)),
-                  ),
-                ),
-                iconColor: MaterialStateProperty.all(Colors.white),
-              ),
-            ),
+            leading: const ArrowIcon(),
             elevation: 0,
             //title: Text('Sign Up', style: Theme.of(context).textTheme.titleMedium),
             //centerTitle: true,

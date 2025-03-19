@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oraimo/widgets/arrow_icon.dart';
 
 class VerifyScreen extends StatefulWidget {
   const VerifyScreen({super.key});
@@ -22,13 +23,38 @@ class _VerifyScreenState extends State<VerifyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, top: 10),
+          child: AppBar(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            leading: const ArrowIcon(),
+          ),
+        ),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.only(
+          left: 23,
+          top: 20,
+          right: 23,
+        ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Column(
+              children: [
+                Text(
+                  "Verify account",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight:
+                        Theme.of(context).textTheme.displaySmall!.fontWeight,
+                  ),
+                )
+              ],
+            ),
             const Text(
               'Enter the OTP',
               style: TextStyle(fontSize: 20),
